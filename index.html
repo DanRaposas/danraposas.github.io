@@ -6,10 +6,387 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script type="module" src="src/js/main.js"></script>
 
-		<title>DanRaposas</title>
+		<title>Dan's Portfolio</title>
 	</head>
 
-	<body x-data="{ text: 'Hello World!' }" class="font-bold">
-		<p class="font-bold" x-text="text"></p>
+	<body class="w-full bg-gray-nurse-200 flex flex-col justify-center items-center min-h-dvh">
+		<header id="navigation" class="w-1/2 py-5 flex flex-row justify-end items-center gap-5">
+			<a href="#profile" class="nav-link">
+				Profile
+			</a>
+
+			<a href="#projects" class="nav-link">
+				Projects
+			</a>
+
+			<a href="#demos" class="nav-link">
+				Demos
+			</a>
+
+			<a href="#contact" class="nav-link">
+				Contact
+			</a>
+		</header>
+
+		<main class="w-1/2 py-5 flex flex-col justify-center items-center grow shrink-0 gap-10">
+			<!-- Profile -->
+			<section id="profile" class="main-content-section">
+				<!-- Name and Position -->
+				<section class="flex flex-col justify-center items-start self-start gap-2">
+					<div class="block">
+						<div id="name">
+							Adonis Maniego
+						</div>
+					</div>
+	
+					<div class="block">
+						<div id="position">
+							Web Developer
+						</div>
+					</div>
+				</section>
+	
+				<!-- Mockup Terminal -->
+				<section class="size-full bg-blue-smoke-800 rounded-lg shadow-md shadow-blue-smoke-500 transition-all hover:shadow-lg hover:shadow-blue-smoke-700">
+					<!-- Window Buttons -->
+					<section class="h-fit w-full p-2 bg-chicago-950 rounded-t-lg flex flex-row justify-end items-center gap-4">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="terminal-btn">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+						</svg>						  
+
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="terminal-btn">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v8.25A2.25 2.25 0 0 0 6 16.5h2.25m8.25-8.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-7.5A2.25 2.25 0 0 1 8.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 0 0-2.25 2.25v6" />
+						</svg>
+						
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="terminal-btn hover:bg-persian-plum-500 active:bg-persian-plum-700">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+						</svg>						  
+					</section>
+
+					<!-- Terminal -->
+					<section class="p-5 text-chicago-100 flex flex-col justify-center items-start gap-5">
+						<!-- Hobbies -->
+						<div>
+							<p class="terminal-text">
+								> dan.<span class="terminal-keyword">hobbies</span>
+							</p>
+	
+							<p class="terminal-output">
+								[
+									'Cycling', 
+									'DIY Crafts', 
+									'Programming', 
+									'Gaming'
+								]
+							</p>
+						</div>
+
+						<!-- Contact -->
+						<div>
+							<p class="terminal-text">
+								> dan.<span class="terminal-keyword">contact</span>
+							</p>
+	
+							<p class="terminal-output">
+								[
+									'<a href="https://github.com/DanRaposas" target="_blank" class="terminal-highlight">GitHub</a>', 
+									'<a href="https://linkedin.com/in/adonis-maniego-449774300" target="_blank" class="terminal-highlight">LinkedIn</a>',
+									'<a href="mailto:danraposas3@gmail.com" target="_blank" class="terminal-highlight">danraposas3@gmail.com</a>'
+								]
+							</p>
+						</div>
+
+						<!-- Education -->
+						<div>
+							<p class="terminal-text">
+								> dan.<span class="terminal-keyword">education</span>
+							</p>
+	
+							<p class="terminal-output">
+								[
+									'BS in Information Technology',
+									'<a href="https://www.spcba.edu.ph/" target="_blank" class="terminal-highlight">San Pedro College of Business Administration</a>'
+								]
+							</p>
+
+							<p class="terminal-text">
+								> dan.<span class="terminal-keyword">education.awards</span>
+							</p>
+	
+							<p class="terminal-output">
+								[
+									'Salutatorian',
+									'Magna Cum Laude'
+								]
+							</p>
+						</div>
+
+						<!-- Experience -->
+						<div>
+							<p class="terminal-text">
+								> dan.<span class="terminal-keyword">experience.internship</span>
+							</p>
+	
+							<p class="terminal-output">
+								[
+									'<a href="https://www.devteam.com/" target="_blank" class="terminal-highlight">DevTeam</a>'
+								]
+							</p>
+						</div>
+
+						<!-- Programming -->
+						<div>
+							<p class="terminal-text">
+								> dan.<span class="terminal-keyword">programming.languages</span>
+							</p>
+	
+							<p class="terminal-output">
+								[
+									'PHP',
+									'HTML5',
+									'CSS3',
+									'JavaScript'
+								]
+							</p>
+
+							<p class="terminal-text">
+								> dan.<span class="terminal-keyword">programming.frameworks</span>
+							</p>
+	
+							<p class="terminal-output">
+								[
+									'Laravel 10',
+									'Livewire 3',
+									'Bootstrap 5',
+									'Tailwind CSS',
+									'Alpine.js'
+								]
+							</p>
+
+							<p class="terminal-text">
+								> dan.<span class="terminal-keyword">programming.libraries</span>
+							</p>
+	
+							<p class="terminal-output">
+								[
+									'jQuery'
+								]
+							</p>
+						</div>
+
+						<div>
+							<p id="terminal-cursor" class="terminal-text">
+								>&nbsp;
+							</p>
+						</div>
+					</section>
+				</section>
+			</section>
+
+			<!-- Projects -->
+			<section id="projects" class="main-content-section">
+				<p class="three-xl-title">
+					Projects
+				</p>
+	
+				<!-- ONE JPCS -->
+				<div class="card">
+					<!-- Project Image -->
+					<div class="w-1/4 h-full">
+						<img src="https://placehold.co/800" class="size-full object-cover rounded-l-lg">
+					</div>
+	
+					<!-- Project Details -->
+					<div class="card-content w-3/4">
+						<p class="xl-title">
+							ONE JPCS
+						</p>
+	
+						<!-- Descriptions -->
+						<p class="card-description">
+							A student organization portal presented as a thesis project by <span class="highlight-text">Bes Amiel Gonzales</span>, <span class="highlight-text">Adonis Maniego</span>, <span class="highlight-text">Andsmel Moreno</span>, and <span class="highlight-text">Leonard Sese</span>.
+						</p>
+	
+						<p class="card-description">
+							It is designed to serve as a hub for the <span class="highlight-text">JPCS SPCBA Chapter</span>. This platform provide features such as real-time chatting, an online store with online payment, an election feature, and many more.
+						</p>
+	
+						<p class="card-description">
+							The project is currently undergoing updates.
+						</p>
+	
+						<!-- Languages and Framework -->
+						<div class="card-badges">
+							<div class="green-outline-badge">HTML5</div>
+							<div class="green-outline-badge">CSS3</div>
+							<div class="green-outline-badge">JavaScript</div>
+							<div class="green-outline-badge">PHP</div>
+							<div class="yellow-outline-badge">Laravel 10</div>
+							<div class="yellow-outline-badge">Livewire 3</div>
+							<div class="yellow-outline-badge">Tailwind CSS</div>
+							<div class="yellow-outline-badge">Alpine.js</div>
+							<div class="gray-outline-badge">Bootstrap 5</div>
+							<div class="gray-outline-badge">jQuery</div>
+						</div>
+					</div>
+				</div>
+	
+				<!-- WebPal -->
+				<div class="card">
+					<!-- Project Image -->
+					<div class="w-1/4">
+						<img src="https://placehold.co/800" class="object-cover rounded-l-lg">
+					</div>
+	
+					<!-- Project Details -->
+					<div class="card-content w-3/4">
+						<p class="xl-title">
+							WebPal
+						</p>
+	
+						<!-- Descriptions -->
+						<p class="card-description">
+							An anonymous online communication platform presented as a thesis project by <span class="highlight-text">Adonis Maniego</span>, <span class="highlight-text">Andsmel Moreno</span>, and <span class="highlight-text">Leonard Sese</span>.
+						</p>
+
+						<p class="card-description">
+							It is designed for students to anonymously share thoughts and feelings with their peers. It offers real-time communication features like chatting, video calls, and voice calls, as well as data encryption for enhanced privacy.
+						</p>
+
+						<p class="card-description">
+							The project is also currently undergoing updates.
+						</p>
+	
+						<!-- Languages and Framework -->
+						<div class="card-badges">
+							<div class="green-outline-badge">HTML5</div>
+							<div class="green-outline-badge">CSS3</div>
+							<div class="green-outline-badge">JavaScript</div>
+							<div class="green-outline-badge">PHP</div>
+							<div class="yellow-outline-badge">Laravel 10</div>
+							<div class="yellow-outline-badge">Livewire 3</div>
+							<div class="yellow-outline-badge">Tailwind CSS</div>
+							<div class="yellow-outline-badge">Alpine.js</div>
+							<div class="gray-outline-badge">Bootstrap 5</div>
+							<div class="gray-outline-badge">jQuery</div>
+						</div>
+					</div>
+				</div>
+	
+				<!-- Portfolio -->
+				<div class="card">
+					<!-- Project Image -->
+					<div class="w-1/4">
+						<img src="https://placehold.co/800" class="object-cover rounded-l-lg">
+					</div>
+	
+					<!-- Project Details -->
+					<div class="card-content w-3/4">
+						<p class="xl-title">
+							Portfolio
+						</p>
+	
+						<!-- Descriptions -->
+						<p class="card-description">
+							My personal web developer portfolio is a responsive website inspired by <a href="https://www.justinchi.me/#contact" class="highlight-link">Justin Chi's work</a>. It showcases a collection of projects and demos that I've developed independently over the past few years.
+						</p>
+	
+						<!-- Languages and Framework -->
+						<div class="card-badges">
+							<div class="green-outline-badge">HTML5</div>
+							<div class="green-outline-badge">CSS3</div>
+							<div class="green-outline-badge">JavaScript</div>
+							<div class="green-outline-badge">Tailwind CSS</div>
+							<div class="green-outline-badge">Alpine.js</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Demos -->
+			<section id="demos" class="main-content-section">
+				<p class="three-xl-title">
+					Demos
+				</p>
+	
+				<!-- Alpine.js -->
+				<div class="card">
+					<!-- Project Image -->
+					<div class="w-1/4">
+						<img src="https://placehold.co/800" class="object-cover rounded-l-lg">
+					</div>
+	
+					<!-- Project Details -->
+					<div class="card-content w-3/4">
+						<p class="xl-title">
+							Alpine.js
+						</p>
+	
+						<!-- Descriptions -->
+						<p class="card-description">
+							A very basic demonstration of how alpine.js directives works.
+						</p>
+	
+						<!-- Languages and Framework -->
+						<div class="card-badges">
+							<div class="green-outline-badge">HTML5</div>
+							<div class="green-outline-badge">CSS3</div>
+							<div class="green-outline-badge">JavaScript</div>
+							<div class="green-outline-badge">Tailwind CSS</div>
+							<div class="green-outline-badge">Alpine.js</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer id="contact" class="w-1/2 py-5 flex flex-col justify-center items-center gap-10">
+			<p class="three-xl-title">
+				Contact
+			</p>
+
+			<!-- Socials -->
+			<section class="flex flex-row justify-center items-center gap-10">
+				<a href="https://github.com/DanRaposas" target="_blank" class="contact-link group">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" class="contact-link-logo"><path d="M18.88 1.099C18.147.366 17.265 0 16.233 0H3.746C2.714 0 1.832.366 1.099 1.099.366 1.832 0 2.714 0 3.746v12.487c0 1.032.366 1.914 1.099 2.647.733.733 1.615 1.099 2.647 1.099H6.66c.19 0 .333-.007.429-.02a.504.504 0 0 0 .286-.169c.095-.1.143-.245.143-.435l-.007-.885c-.004-.564-.006-1.01-.006-1.34l-.3.052c-.19.035-.43.05-.721.046a5.555 5.555 0 0 1-.904-.091 2.026 2.026 0 0 1-.872-.39 1.651 1.651 0 0 1-.572-.8l-.13-.3a3.25 3.25 0 0 0-.41-.663c-.186-.243-.375-.407-.566-.494l-.09-.065a.956.956 0 0 1-.17-.156.723.723 0 0 1-.117-.182c-.026-.061-.004-.111.065-.15.07-.04.195-.059.378-.059l.26.04c.173.034.388.138.643.311a2.1 2.1 0 0 1 .631.677c.2.355.44.626.722.813.282.186.566.28.852.28.286 0 .533-.022.742-.065a2.59 2.59 0 0 0 .585-.196c.078-.58.29-1.028.637-1.34a8.907 8.907 0 0 1-1.333-.234 5.314 5.314 0 0 1-1.223-.507 3.5 3.5 0 0 1-1.047-.872c-.277-.347-.505-.802-.683-1.365-.177-.564-.266-1.215-.266-1.952 0-1.049.342-1.942 1.027-2.68-.32-.788-.29-1.673.091-2.652.252-.079.625-.02 1.119.175.494.195.856.362 1.086.5.23.14.414.257.553.352a9.233 9.233 0 0 1 2.497-.338c.859 0 1.691.113 2.498.338l.494-.312a6.997 6.997 0 0 1 1.197-.572c.46-.174.81-.221 1.054-.143.39.98.424 1.864.103 2.653.685.737 1.028 1.63 1.028 2.68 0 .737-.089 1.39-.267 1.957-.177.568-.407 1.023-.689 1.366-.282.343-.633.63-1.053.865-.42.234-.828.403-1.223.507a8.9 8.9 0 0 1-1.333.235c.45.39.676 1.005.676 1.846v3.11c0 .147.021.266.065.357a.36.36 0 0 0 .208.189c.096.034.18.056.254.064.074.01.18.013.318.013h2.914c1.032 0 1.914-.366 2.647-1.099.732-.732 1.099-1.615 1.099-2.647V3.746c0-1.032-.367-1.914-1.1-2.647z"></path></svg>
+
+					<p class="contact-link-text">DanRaposas</p>
+				</a>
+
+				<a href="https://linkedin.com/in/adonis-maniego-449774300" target="_blank" class="contact-link group">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" class="contact-link-logo"><path d="M15 11.13v3.697h-2.143v-3.45c0-.866-.31-1.457-1.086-1.457-.592 0-.945.398-1.1.784-.056.138-.071.33-.071.522v3.601H8.456s.029-5.842 0-6.447H10.6v.913l-.014.021h.014v-.02c.285-.44.793-1.066 1.932-1.066 1.41 0 2.468.922 2.468 2.902zM6.213 5.271C5.48 5.271 5 5.753 5 6.385c0 .62.466 1.115 1.185 1.115h.014c.748 0 1.213-.496 1.213-1.115-.014-.632-.465-1.114-1.199-1.114zm-1.086 9.556h2.144V8.38H5.127v6.447z"></path><path d="M4 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H4zm0-2h12a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4z"></path></svg>
+
+					<p class="contact-link-text">Adonis Maniego</p>
+				</a>
+
+				<a href="mailto:danraposas3@gmail.com" target="_blank" class="contact-link group">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -5 24 24" class="contact-link-logo"><path d="M18.572.083L10.676 7.12a1 1 0 0 1-1.331 0L1.416.087A2 2 0 0 1 2 0h16a2 2 0 0 1 .572.083zm1.356 1.385c.047.17.072.348.072.532v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2c0-.185.025-.364.072-.534l7.942 7.148a3 3 0 0 0 3.992 0l7.922-7.146z"></path></svg>
+
+					<p class="contact-link-text">danraposas3@gmail.com</p>
+				</a>
+			</section>
+
+			<!-- Credit -->
+			<section class="flex flex-row justify-center items-center">
+				<div class="flex flex-row justify-center items-center gap-1">
+					<p class="credit-text">Adonis Maniego</p>
+
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright size-5 stroke-2" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+						<path class="stroke-chicago-700" d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+						<path class="stroke-chicago-700" d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173" />
+					</svg>
+
+					<p class="credit-text">2024</p>
+				</div>
+
+				<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-minus-vertical size-7" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+					<path class="stroke-chicago-700" d="M12 5v14" />
+				</svg>
+
+				<p class="credit-text cursor-pointer transition-all hover:text-toledo-600 active:text-toledo-800">Disclaimer</p>
+			</section>
+		</footer>
 	</body>
 </html>

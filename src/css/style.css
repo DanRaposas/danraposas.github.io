@@ -1,3 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    * {
+        font-family: 'Poppins', 'Courier New', Courier, monospace;
+    }
+}
+
+@layer components {
+    .nav-link {
+        @apply font-semibold text-chicago-700 text-xl transition-all hover:text-toledo-600 active:text-toledo-800;
+    }
+    
+    .terminal-btn {
+        @apply size-5 rounded-md stroke-chicago-100 stroke-2 transition-all hover:bg-chicago-600 active:bg-chicago-800;
+    }
+    
+    .three-xl-title {
+        @apply py-2 text-chicago-700 font-bold text-3xl rounded border-y-4 border-solid border-chicago-700;
+    }
+    
+    .xl-title {
+        @apply text-chicago-700 font-bold text-xl;
+    }
+    
+    .terminal-text {
+        @apply font-mono text-chicago-100;
+    }
+    
+    .terminal-keyword {
+        @apply font-mono text-toledo-400;
+    }
+    
+    .terminal-highlight {
+        @apply font-mono font-semibold text-toledo-400 transition-all hover:underline hover:underline-offset-2 active:text-toledo-600;
+    }
+    
+    .terminal-output {
+        @apply font-mono text-chicago-300;
+    }
+    
+    .highlight-text {
+        @apply font-semibold text-toledo-600;
+    }
+    
+    .highlight-link {
+        @apply font-semibold text-toledo-600 transition-all hover:underline hover:underline-offset-2 active:text-toledo-800;
+    }
+    
+    .main-content-section {
+        @apply w-full flex flex-col justify-center items-center gap-10;
+    }
+    
+    .card {
+        @apply w-full bg-gray-nurse-50 rounded-lg shadow-md shadow-blue-smoke-500 flex flex-row justify-center items-center gap-5 transition-all hover:shadow-blue-smoke-700 hover:shadow-lg;
+    }
+    
+    .card-content {
+        @apply py-5 pr-5 flex flex-col justify-center items-start gap-5;
+    }
+    
+    .card-description {
+        @apply text-chicago-700 text-pretty;
+    }
+    
+    .card-badges {
+        @apply w-full flex flex-row flex-wrap justify-start items-center gap-2;
+    }
+    
+    .green-outline-badge {
+        @apply px-2 py-1 font-mono text-chicago-700 border-2 border-solid border-green-400 rounded-lg select-none transition-all hover:shadow hover:shadow-green-600;
+    }
+    
+    .gray-outline-badge {
+        @apply px-2 py-1 font-mono text-chicago-400 border-2 border-solid border-chicago-400 rounded-lg select-none transition-all hover:shadow hover:shadow-chicago-600;
+    }
+    
+    .yellow-outline-badge {
+        @apply px-2 py-1 font-mono text-chicago-700 border-2 border-solid border-yellow-400 rounded-lg select-none transition-all hover:shadow hover:shadow-yellow-600;
+    }
+    
+    .contact-link {
+        @apply text-chicago-700 text-lg flex flex-row justify-center items-center gap-2;
+    }
+
+    .contact-link-text {
+        @apply font-medium transition-all group-hover:text-toledo-600 group-active:text-toledo-800
+    }
+    
+    .contact-link-logo {
+        @apply size-7 fill-chicago-700 transition-all group-hover:fill-toledo-600 group-active:fill-toledo-800;
+    }
+    
+    .credit-text {
+        @apply text-chicago-700 text-sm font-medium;
+    }
+}
+
+#name {
+    @apply w-full font-mono text-chicago-700 text-nowrap overflow-x-clip text-8xl self-start transition-all;
+    animation: 
+        typing 2s steps(14), 
+        cursor-black .5s step-end 3 alternate;
+}
+
+#position {
+    @apply w-full font-mono text-chicago-700 text-nowrap overflow-x-clip text-6xl self-start transition-all;
+    animation: 
+        hide-text 2s 1,
+        typing 2s steps(13) 2s, 
+        cursor-black .5s step-end 2s infinite alternate;
+}
+
+#terminal-cursor {
+    animation: cursor-white .5s step-end infinite alternate;
+}
+
+@keyframes cursor-black {
+    50% { @apply border-r-8 border-solid border-chicago-700 }
+}
+
+@keyframes cursor-white {
+    50% { @apply border-r-8 border-solid border-chicago-100 }
+}
+
+@keyframes hide-text {
+    0%, 100% { @apply text-transparent; }
+}
+
+@keyframes typing {
+    from { width: 0; }
+}
