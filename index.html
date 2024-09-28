@@ -9,30 +9,69 @@
 		<title>Dan's Portfolio</title>
 	</head>
 
-	<body class="w-full bg-gray-nurse-200 flex flex-col justify-center items-center min-h-dvh">
-		<header id="navigation" class="w-1/2 py-5 flex flex-row justify-end items-center gap-5">
-			<a href="#profile" class="nav-link">
-				Profile
-			</a>
+	<body class="w-full bg-gray-nurse-200 y-centered-flex-col min-h-dvh gap-10">
+		<header x-data="nav" id="navigation" class="w-11/12 md:w-10/12 lg:w-4/5 xl:w-3/4 2xl:w-1/2 py-5">
+			<!-- Nav for large screens -->
+			<nav id="large-nav" class="nav">
+				<a href="#profile" id="large-nav-link" class="nav-link">
+					Profile
+				</a>
+	
+				<a href="#projects" id="large-nav-link" class="nav-link">
+					Projects
+				</a>
+	
+				<a href="#demos" id="large-nav-link" class="nav-link">
+					Demos
+				</a>
+	
+				<a href="#contact" id="large-nav-link" class="nav-link">
+					Contact
+				</a>
+			</nav>
 
-			<a href="#projects" class="nav-link">
-				Projects
-			</a>
+			<!-- Menu button -->
+			<div class="w-full flex flex-row justify-end items-center lg:hidden">
+				<button 
+					x-on:click="toggle = !toggle"
+					type="button" 
+					class="px-2 py-1 rounded-lg bg-gray-nurse-50 transition-all hover:bg-gray-nurse-300 active:bg-gray-nurse-400"
+				>
+					<svg x-show="toggle === false" x-cloak xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 fill-chicago-700">
+						<path fill-rule="evenodd" d="M2.25 4.5A.75.75 0 0 1 3 3.75h14.25a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75Zm0 4.5A.75.75 0 0 1 3 8.25h9.75a.75.75 0 0 1 0 1.5H3A.75.75 0 0 1 2.25 9Zm15-.75A.75.75 0 0 1 18 9v10.19l2.47-2.47a.75.75 0 1 1 1.06 1.06l-3.75 3.75a.75.75 0 0 1-1.06 0l-3.75-3.75a.75.75 0 1 1 1.06-1.06l2.47 2.47V9a.75.75 0 0 1 .75-.75Zm-15 5.25a.75.75 0 0 1 .75-.75h9.75a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+					</svg>
 
-			<a href="#demos" class="nav-link">
-				Demos
-			</a>
+					<svg x-show="toggle === true" x-cloak xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 fill-chicago-700">
+						<path fill-rule="evenodd" d="M2.25 4.5A.75.75 0 0 1 3 3.75h14.25a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75Zm14.47 3.97a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 1 1-1.06 1.06L18 10.81V21a.75.75 0 0 1-1.5 0V10.81l-2.47 2.47a.75.75 0 1 1-1.06-1.06l3.75-3.75ZM2.25 9A.75.75 0 0 1 3 8.25h9.75a.75.75 0 0 1 0 1.5H3A.75.75 0 0 1 2.25 9Zm0 4.5a.75.75 0 0 1 .75-.75h5.25a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+					</svg>					  
+				</button>
+			</div>
 
-			<a href="#contact" class="nav-link">
-				Contact
-			</a>
+			<!-- Nav for mobile -->
+			<nav x-show="toggle" x-cloak x-transition id="mobile-nav" class="nav">
+				<a href="#profile" id="mobile-nav-link" class="nav-link">
+					Profile
+				</a>
+	
+				<a href="#projects" id="mobile-nav-link" class="nav-link">
+					Projects
+				</a>
+	
+				<a href="#demos" id="mobile-nav-link" class="nav-link">
+					Demos
+				</a>
+	
+				<a href="#contact" id="mobile-nav-link" class="nav-link">
+					Contact
+				</a>
+			</nav>
 		</header>
 
-		<main class="w-1/2 py-5 flex flex-col justify-center items-center grow shrink-0 gap-10">
+		<main class="w-11/12 md:w-10/12 lg:w-4/5 xl:w-3/4 2xl:w-1/2 py-5 y-centered-flex-col grow shrink-0 gap-10">
 			<!-- Profile -->
 			<section id="profile" class="main-content-section">
 				<!-- Name and Position -->
-				<section class="flex flex-col justify-center items-start self-start gap-2">
+				<section class="y-start-flex-col self-start gap-2">
 					<div class="block">
 						<div id="name">
 							Adonis Maniego
@@ -49,7 +88,7 @@
 				<!-- Mockup Terminal -->
 				<section class="size-full bg-blue-smoke-800 rounded-lg shadow-md shadow-blue-smoke-500 transition-all hover:shadow-lg hover:shadow-blue-smoke-700">
 					<!-- Window Buttons -->
-					<section class="h-fit w-full p-2 bg-chicago-950 rounded-t-lg flex flex-row justify-end items-center gap-4">
+					<section class="h-fit w-full p-2 bg-chicago-950 rounded-t-lg x-end-flex-row gap-4">
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="terminal-btn">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
 						</svg>						  
@@ -64,7 +103,7 @@
 					</section>
 
 					<!-- Terminal -->
-					<section class="p-5 text-chicago-100 flex flex-col justify-center items-start gap-5">
+					<section class="p-5 text-chicago-100 y-start-flex-col gap-5">
 						<!-- Hobbies -->
 						<div>
 							<p class="terminal-text">
@@ -192,12 +231,10 @@
 				<!-- ONE JPCS -->
 				<div class="card">
 					<!-- Project Image -->
-					<div class="w-1/4 h-full">
-						<img src="https://placehold.co/800" class="size-full object-cover rounded-l-lg">
-					</div>
+					<img src="/img/one_jpcs.png" class="card-image" />
 	
 					<!-- Project Details -->
-					<div class="card-content w-3/4">
+					<div class="card-content">
 						<p class="xl-title">
 							ONE JPCS
 						</p>
@@ -234,12 +271,10 @@
 				<!-- WebPal -->
 				<div class="card">
 					<!-- Project Image -->
-					<div class="w-1/4">
-						<img src="https://placehold.co/800" class="object-cover rounded-l-lg">
-					</div>
+					<img src="/img/webpal.png" class="card-image" />
 	
 					<!-- Project Details -->
-					<div class="card-content w-3/4">
+					<div class="card-content">
 						<p class="xl-title">
 							WebPal
 						</p>
@@ -276,19 +311,25 @@
 				<!-- Portfolio -->
 				<div class="card">
 					<!-- Project Image -->
-					<div class="w-1/4">
-						<img src="https://placehold.co/800" class="object-cover rounded-l-lg">
-					</div>
+					<img src="/img/portfolio.png" class="card-image" />
 	
 					<!-- Project Details -->
-					<div class="card-content w-3/4">
+					<div class="card-content">
 						<p class="xl-title">
 							Portfolio
 						</p>
 	
 						<!-- Descriptions -->
 						<p class="card-description">
-							My personal web developer portfolio is a responsive website inspired by <a href="https://www.justinchi.me/#contact" class="highlight-link">Justin Chi's work</a>. It showcases a collection of projects and demos that I've developed independently over the past few years.
+							This personal portfolio highlights my web development skills and experience.
+						</p>
+
+						<p class="card-description">
+							Inspired by <a href="https://www.justinchi.me/#contact" class="highlight-link">Justin Chi's portfolio</a>, I developed a more simplified design.
+						</p>
+
+						<p class="card-description">
+							The content and functionality are entirely my own work.
 						</p>
 	
 						<!-- Languages and Framework -->
@@ -312,12 +353,10 @@
 				<!-- Alpine.js -->
 				<div class="card">
 					<!-- Project Image -->
-					<div class="w-1/4">
-						<img src="https://placehold.co/800" class="object-cover rounded-l-lg">
-					</div>
+					<img src="/img/alpine.png" class="card-image" />
 	
 					<!-- Project Details -->
-					<div class="card-content w-3/4">
+					<div class="card-content">
 						<p class="xl-title">
 							Alpine.js
 						</p>
@@ -340,13 +379,9 @@
 			</section>
 		</main>
 
-		<footer id="contact" class="w-1/2 py-5 flex flex-col justify-center items-center gap-10">
-			<p class="three-xl-title">
-				Contact
-			</p>
-
+		<footer id="contact" class="w-11/12 md:w-10/12 lg:w-4/5 xl:w-3/4 2xl:w-1/2 py-5 y-centered-flex-col gap-5">
 			<!-- Socials -->
-			<section class="flex flex-row justify-center items-center gap-10">
+			<section class="x-centered-flex-row gap-5 xl:gap-10">
 				<a href="https://github.com/DanRaposas" target="_blank" class="contact-link group">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" class="contact-link-logo"><path d="M18.88 1.099C18.147.366 17.265 0 16.233 0H3.746C2.714 0 1.832.366 1.099 1.099.366 1.832 0 2.714 0 3.746v12.487c0 1.032.366 1.914 1.099 2.647.733.733 1.615 1.099 2.647 1.099H6.66c.19 0 .333-.007.429-.02a.504.504 0 0 0 .286-.169c.095-.1.143-.245.143-.435l-.007-.885c-.004-.564-.006-1.01-.006-1.34l-.3.052c-.19.035-.43.05-.721.046a5.555 5.555 0 0 1-.904-.091 2.026 2.026 0 0 1-.872-.39 1.651 1.651 0 0 1-.572-.8l-.13-.3a3.25 3.25 0 0 0-.41-.663c-.186-.243-.375-.407-.566-.494l-.09-.065a.956.956 0 0 1-.17-.156.723.723 0 0 1-.117-.182c-.026-.061-.004-.111.065-.15.07-.04.195-.059.378-.059l.26.04c.173.034.388.138.643.311a2.1 2.1 0 0 1 .631.677c.2.355.44.626.722.813.282.186.566.28.852.28.286 0 .533-.022.742-.065a2.59 2.59 0 0 0 .585-.196c.078-.58.29-1.028.637-1.34a8.907 8.907 0 0 1-1.333-.234 5.314 5.314 0 0 1-1.223-.507 3.5 3.5 0 0 1-1.047-.872c-.277-.347-.505-.802-.683-1.365-.177-.564-.266-1.215-.266-1.952 0-1.049.342-1.942 1.027-2.68-.32-.788-.29-1.673.091-2.652.252-.079.625-.02 1.119.175.494.195.856.362 1.086.5.23.14.414.257.553.352a9.233 9.233 0 0 1 2.497-.338c.859 0 1.691.113 2.498.338l.494-.312a6.997 6.997 0 0 1 1.197-.572c.46-.174.81-.221 1.054-.143.39.98.424 1.864.103 2.653.685.737 1.028 1.63 1.028 2.68 0 .737-.089 1.39-.267 1.957-.177.568-.407 1.023-.689 1.366-.282.343-.633.63-1.053.865-.42.234-.828.403-1.223.507a8.9 8.9 0 0 1-1.333.235c.45.39.676 1.005.676 1.846v3.11c0 .147.021.266.065.357a.36.36 0 0 0 .208.189c.096.034.18.056.254.064.074.01.18.013.318.013h2.914c1.032 0 1.914-.366 2.647-1.099.732-.732 1.099-1.615 1.099-2.647V3.746c0-1.032-.367-1.914-1.1-2.647z"></path></svg>
 
@@ -367,8 +402,8 @@
 			</section>
 
 			<!-- Credit -->
-			<section class="flex flex-row justify-center items-center">
-				<div class="flex flex-row justify-center items-center gap-1">
+			<section class="x-centered-flex-row">
+				<div class="x-centered-flex-row gap-1">
 					<p class="credit-text">Adonis Maniego</p>
 
 					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright size-5 stroke-2" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -379,13 +414,6 @@
 
 					<p class="credit-text">2024</p>
 				</div>
-
-				<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-minus-vertical size-7" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-					<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-					<path class="stroke-chicago-700" d="M12 5v14" />
-				</svg>
-
-				<p class="credit-text cursor-pointer transition-all hover:text-toledo-600 active:text-toledo-800">Disclaimer</p>
 			</section>
 		</footer>
 	</body>

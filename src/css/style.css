@@ -8,9 +8,17 @@
     * {
         font-family: 'Poppins', 'Courier New', Courier, monospace;
     }
+
+    [x-cloak] {
+        display: none !important;
+    }
 }
 
 @layer components {
+    .nav {
+        @apply w-full y-centered-flex-col lg:x-end-flex-row gap-5;
+    }
+
     .nav-link {
         @apply font-semibold text-chicago-700 text-xl transition-all hover:text-toledo-600 active:text-toledo-800;
     }
@@ -36,7 +44,7 @@
     }
     
     .terminal-highlight {
-        @apply font-mono font-semibold text-toledo-400 transition-all hover:underline hover:underline-offset-2 active:text-toledo-600;
+        @apply font-mono font-bold text-toledo-400 transition-all hover:underline hover:underline-offset-2 hover:text-toledo-500 active:text-toledo-600;
     }
     
     .terminal-output {
@@ -48,19 +56,23 @@
     }
     
     .highlight-link {
-        @apply font-semibold text-toledo-600 transition-all hover:underline hover:underline-offset-2 active:text-toledo-800;
+        @apply font-semibold text-toledo-600 transition-all hover:underline hover:underline-offset-2 hover:text-toledo-700 active:text-toledo-800;
     }
     
     .main-content-section {
-        @apply w-full flex flex-col justify-center items-center gap-10;
+        @apply w-full y-centered-flex-col gap-10;
     }
     
     .card {
-        @apply w-full bg-gray-nurse-50 rounded-lg shadow-md shadow-blue-smoke-500 flex flex-row justify-center items-center gap-5 transition-all hover:shadow-blue-smoke-700 hover:shadow-lg;
+        @apply w-full bg-gray-nurse-50 rounded-lg shadow-md shadow-blue-smoke-500 grid grid-rows-2 md:grid-rows-none md:grid-cols-3 gap-5 transition-all hover:shadow-blue-smoke-700 hover:shadow-lg;
     }
     
     .card-content {
-        @apply py-5 pr-5 flex flex-col justify-center items-start gap-5;
+        @apply px-5 pb-5 md:pl-0 md:py-5 md:pr-5 y-start-flex-col gap-5 md:col-span-2;
+    }
+
+    .card-image {
+        @apply size-full object-cover border-b-2 md:border-b-0 md:border-r-2 border-solid border-chicago-700 rounded-t-lg md:rounded-t-none md:rounded-l-lg;
     }
     
     .card-description {
@@ -70,21 +82,25 @@
     .card-badges {
         @apply w-full flex flex-row flex-wrap justify-start items-center gap-2;
     }
+
+    .badge {
+        @apply px-2 py-1 font-mono border-2 border-solid rounded-lg select-none transition-all hover:shadow;
+    }
     
     .green-outline-badge {
-        @apply px-2 py-1 font-mono text-chicago-700 border-2 border-solid border-green-400 rounded-lg select-none transition-all hover:shadow hover:shadow-green-600;
+        @apply badge text-chicago-700 border-green-400 hover:shadow-green-400;
     }
     
     .gray-outline-badge {
-        @apply px-2 py-1 font-mono text-chicago-400 border-2 border-solid border-chicago-400 rounded-lg select-none transition-all hover:shadow hover:shadow-chicago-600;
+        @apply badge text-chicago-400 border-chicago-400 hover:shadow-chicago-400;
     }
     
     .yellow-outline-badge {
-        @apply px-2 py-1 font-mono text-chicago-700 border-2 border-solid border-yellow-400 rounded-lg select-none transition-all hover:shadow hover:shadow-yellow-600;
+        @apply badge text-chicago-700 border-yellow-400 hover:shadow-yellow-400;
     }
     
     .contact-link {
-        @apply text-chicago-700 text-lg flex flex-row justify-center items-center gap-2;
+        @apply text-chicago-700 text-lg x-centered-flex-row gap-2;
     }
 
     .contact-link-text {
@@ -100,15 +116,33 @@
     }
 }
 
+@layer utilities {
+    .x-centered-flex-row {
+        @apply flex flex-row flex-wrap justify-center items-center;
+    }
+
+    .x-end-flex-row {
+        @apply flex flex-row justify-end items-center;
+    }
+
+    .y-centered-flex-col {
+        @apply flex flex-col justify-center items-center;
+    }
+
+    .y-start-flex-col {
+        @apply flex flex-col justify-center items-start;
+    }
+}
+
 #name {
-    @apply w-full font-mono text-chicago-700 text-nowrap overflow-x-clip text-8xl self-start transition-all;
+    @apply w-full font-mono text-chicago-700 text-nowrap overflow-x-clip text-4xl md:text-6xl lg:text-7xl xl:text-8xl self-start transition-all;
     animation: 
         typing 2s steps(14), 
         cursor-black .5s step-end 3 alternate;
 }
 
 #position {
-    @apply w-full font-mono text-chicago-700 text-nowrap overflow-x-clip text-6xl self-start transition-all;
+    @apply w-full font-mono text-chicago-700 text-nowrap overflow-x-clip text-2xl md:text-4xl lg:text-5xl xl:text-6xl self-start transition-all;
     animation: 
         hide-text 2s 1,
         typing 2s steps(13) 2s, 
