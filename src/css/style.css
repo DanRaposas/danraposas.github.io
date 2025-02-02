@@ -150,28 +150,35 @@
 	@apply w-full self-start overflow-x-clip text-nowrap font-mono text-4xl text-chicago-700 transition-all md:text-6xl lg:text-7xl xl:text-8xl;
 	animation:
 		typing 2s steps(14),
-		cursor-black 0.5s step-end 3 alternate;
-}
+		cursor-black 0.5s step-end 4 alternate;
+	}
 
 #position {
 	@apply w-full self-start overflow-x-clip text-nowrap font-mono text-2xl text-chicago-700 transition-all md:text-4xl lg:text-5xl xl:text-6xl;
 	animation:
 		hide-text 2s 1,
 		typing 2s steps(13) 2s,
-		cursor-black 0.5s step-end 2s infinite alternate;
+		cursor-black 0.5s step-end 2s 4.5 alternate,
+		cursor-black-blinking 0.5s step-end 4s infinite alternate;
 }
 
 #terminal-cursor {
-	animation: cursor-white 0.5s step-end infinite alternate;
+	animation: cursor-white-blinking 0.5s step-end infinite alternate;
 }
 
 @keyframes cursor-black {
+	0%, 100% {
+		@apply border-r-8 border-solid border-chicago-700;
+	}
+}
+
+@keyframes cursor-black-blinking {
 	50% {
 		@apply border-r-8 border-solid border-chicago-700;
 	}
 }
 
-@keyframes cursor-white {
+@keyframes cursor-white-blinking {
 	50% {
 		@apply border-r-8 border-solid border-chicago-100;
 	}
