@@ -36,19 +36,19 @@
 	}
 
 	.terminal-text {
-		@apply font-mono text-chicago-100;
+		@apply font-mono text-chicago-100 select-none;
 	}
 
 	.terminal-keyword {
-		@apply font-mono text-toledo-400;
+		@apply font-mono text-toledo-400 select-none break-all;
 	}
 
 	.terminal-highlight {
-		@apply font-mono font-bold text-toledo-400 transition-all hover:text-toledo-500 hover:underline hover:underline-offset-2 active:text-toledo-600;
+		@apply font-mono font-bold text-toledo-400 select-none transition-all hover:text-toledo-500 hover:underline hover:underline-offset-2 active:text-toledo-600;
 	}
 
 	.terminal-output {
-		@apply font-mono text-chicago-300;
+		@apply font-mono text-chicago-300 select-none;
 	}
 
 	.highlight-text {

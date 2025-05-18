@@ -1,6 +1,7 @@
 // Imports
 import { projects } from './data/projects'
 import { demos } from './data/demos'
+import { profile } from './data/profile'
 
 // Functions
 // Function for toggling the navbars
@@ -39,6 +40,7 @@ window.addEventListener('alpine:init', () => {
     Alpine.data('cards', () => ({
         projectData: projects,
         demoData: demos,
+        profileData: profile,
         badgeColor(badgeValue) {
             return (badgeValue === true) ? "green-outline-badge" : "gray-outline-badge";
         },
@@ -65,6 +67,10 @@ window.addEventListener('alpine:init', () => {
             } else {
                 return name.charAt(0).toUpperCase() + name.slice(1);
             }
+        },
+        terminalList(list, currentIndex, value) {
+            const listLimit = list.length - 1;
+            return (listLimit === currentIndex) ? `'${value}'` : `'${value}', `;
         }
     }));
 });

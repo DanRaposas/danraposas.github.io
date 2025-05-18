@@ -105,196 +105,48 @@
 			class="y-centered-flex-col w-11/12 shrink-0 grow gap-10 py-5 md:w-10/12 lg:w-4/5 xl:w-3/4 2xl:w-1/2"
 		>
 			<!-- Profile -->
-			<section id="profile" class="main-content-section">
-				<!-- Name and Position -->
+			<section 
+				id="profile" 
+				class="main-content-section"
+			>
 				<section class="y-start-flex-col gap-2 self-start">
-					<div class="block">
-						<div id="name">Adonis Maniego</div>
-					</div>
-
-					<div class="block">
-						<div id="position">Web Developer</div>
-					</div>
+					<template x-for="(value, index) in profileData.details">
+						<div class="block">
+							<div 
+								x-bind:id="index"
+								x-text="value"
+							></div>
+						</div>
+					</template>
 				</section>
 
 				<!-- Mockup Terminal -->
-				<section
-					class="size-full rounded-lg bg-blue-smoke-800 shadow-md shadow-blue-smoke-500 transition-all hover:shadow-lg hover:shadow-blue-smoke-700"
-				>
+				<section class="size-full rounded-lg bg-blue-smoke-800 shadow-md shadow-blue-smoke-500 transition-all hover:shadow-lg hover:shadow-blue-smoke-700">
 					<!-- Window Buttons -->
-					<section
-						class="x-end-flex-row h-fit w-full gap-4 rounded-t-lg bg-chicago-950 p-2"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke-width="1.5"
-							stroke="currentColor"
-							class="terminal-btn"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								d="M5 12h14"
-							/>
-						</svg>
-
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke-width="1.5"
-							stroke="currentColor"
-							class="terminal-btn"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								d="M16.5 8.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v8.25A2.25 2.25 0 0 0 6 16.5h2.25m8.25-8.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-7.5A2.25 2.25 0 0 1 8.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 0 0-2.25 2.25v6"
-							/>
-						</svg>
-
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke-width="1.5"
-							stroke="currentColor"
-							class="terminal-btn hover:bg-persian-plum-500 active:bg-persian-plum-700"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								d="M6 18 18 6M6 6l12 12"
-							/>
-						</svg>
+					<section class="x-end-flex-row h-fit w-full gap-4 rounded-t-lg bg-chicago-950 p-2">
+						<template x-for="icon in profileData.mockupTerminal.icons">
+							<div x-html="icon"></div>
+						</template>
 					</section>
 
 					<!-- Terminal -->
-					<section
-						class="y-start-flex-col gap-5 p-5 text-chicago-100"
-					>
-						<!-- Hobbies -->
-						<div>
-							<p class="terminal-text">
-								> dan.<span class="terminal-keyword"
-									>hobbies</span
-								>
-							</p>
+					<section class="y-start-flex-col gap-5 p-5 text-chicago-100">
+						<template x-for="(value, index) in profileData.mockupTerminal.content">
+							<div>
+								<p 
+									class="terminal-text"
+									x-html="value.title"	
+								></p>
 
-							<p class="terminal-output">
-								[ 'Cycling', 'DIY Crafts', 'Programming',
-								'Gaming' ]
-							</p>
-						</div>
-
-						<!-- Contact -->
-						<div>
-							<p class="terminal-text">
-								> dan.<span class="terminal-keyword"
-									>contact</span
-								>
-							</p>
-
-							<p class="terminal-output">
-								[ '<a
-									href="https://github.com/DanRaposas"
-									target="_blank"
-									class="terminal-highlight"
-									>GitHub</a
-								>', '<a
-									href="https://linkedin.com/in/adonis-maniego-449774300"
-									target="_blank"
-									class="terminal-highlight"
-									>LinkedIn</a
-								>', '<a
-									href="mailto:danraposas3@gmail.com"
-									target="_blank"
-									class="terminal-highlight"
-									>danraposas3@gmail.com</a
-								>' ]
-							</p>
-						</div>
-
-						<!-- Education -->
-						<div>
-							<p class="terminal-text">
-								> dan.<span class="terminal-keyword"
-									>education</span
-								>
-							</p>
-
-							<p class="terminal-output">
-								[ 'BS in Information Technology', '<a
-									href="https://www.spcba.edu.ph/"
-									target="_blank"
-									class="terminal-highlight"
-									>San Pedro College of Business
-									Administration</a
-								>' ]
-							</p>
-
-							<p class="terminal-text">
-								> dan.<span class="terminal-keyword"
-									>education.awards</span
-								>
-							</p>
-
-							<p class="terminal-output">
-								[ 'Salutatorian', 'Magna Cum Laude' ]
-							</p>
-						</div>
-
-						<!-- Experience -->
-						<div>
-							<p class="terminal-text">
-								> dan.<span class="terminal-keyword"
-									>experience.internship</span
-								>
-							</p>
-
-							<p class="terminal-output">
-								[ '<a
-									href="https://www.devteam.com/"
-									target="_blank"
-									class="terminal-highlight"
-									>DevTeam</a
-								>' ]
-							</p>
-						</div>
-
-						<!-- Programming -->
-						<div>
-							<p class="terminal-text">
-								> dan.<span class="terminal-keyword"
-									>programming.languages</span
-								>
-							</p>
-
-							<p class="terminal-output">
-								[ 'PHP', 'HTML5', 'CSS3', 'JavaScript' ]
-							</p>
-
-							<p class="terminal-text">
-								> dan.<span class="terminal-keyword"
-									>programming.frameworks</span
-								>
-							</p>
-
-							<p class="terminal-output">
-								[ 'Laravel 10', 'Livewire 3', 'Bootstrap 5',
-								'Tailwind CSS', 'Alpine.js' ]
-							</p>
-
-							<p class="terminal-text">
-								> dan.<span class="terminal-keyword"
-									>programming.libraries</span
-								>
-							</p>
-
-							<p class="terminal-output">[ 'jQuery' ]</p>
-						</div>
+								<div class="terminal-output">
+									[
+										<template x-for="(innerValue, innerIndex) in value.list">
+											<span class="terminal-output" x-html="terminalList(value.list, innerIndex, innerValue)"></span>
+										</template>
+									]
+								</div>
+							</div>
+						</template>
 
 						<div>
 							<p id="terminal-cursor" class="terminal-text">
