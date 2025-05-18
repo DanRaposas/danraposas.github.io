@@ -1,3 +1,7 @@
+// Imports
+import { projects } from './data/projects'
+
+// Functions
 // Function for toggling the navbars
 function toggleNavbar() {
     const windowWidth = window.outerWidth;
@@ -18,16 +22,47 @@ function toggleNavbar() {
     }
 }
 
-window.addEventListener('alpine:init', () => {
-    Alpine.data('nav', () => ({
-        'toggle': false,
-    }));
-});
-
 window.addEventListener('DOMContentLoaded', () => {
     toggleNavbar();
 });
 
 window.addEventListener('resize', () => {
     toggleNavbar();
+});
+
+window.addEventListener('alpine:init', () => {
+    Alpine.data('nav', () => ({
+        'toggle': false,
+    }));
+
+    Alpine.data('projectCards', () => ({
+        contents: projects,
+        badgeColor(badgeValue) {
+            return (badgeValue === true) ? "green-outline-badge" : "gray-outline-badge";
+        },
+        badgeText(badgeName) {
+            const name = badgeName.toLowerCase();
+            
+            const allUpper = [
+                'html5', 
+                'css3', 
+                'php'
+            ];
+
+            const specialCase = {
+                javascript: "JavaScript",
+                alpinejs: "Alpine.js",
+                jquery: "jQuery"
+            }
+
+            // Checks if a string should be all uppercase, use a special case, or sentence case
+            if (allUpper.includes(name)) {
+                return name.toUpperCase();
+            } else if(Object.keys(specialCase).includes(name)) {
+                return specialCase[name];
+            } else {
+                return name.charAt(0).toUpperCase() + name.slice(1);
+            }
+        }
+    }));
 });

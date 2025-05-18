@@ -305,139 +305,37 @@
 			</section>
 
 			<!-- Projects -->
-			<section id="projects" class="main-content-section">
+			<section 
+				x-data="projectCards"
+				id="projects" 
+				class="main-content-section"
+			>
 				<p class="three-xl-title">Projects</p>
 
-				<!-- ONE JPCS -->
-				<div class="card">
-					<!-- Project Image -->
-					<img src="/img/one_jpcs.png" alt="ONE JPCS Student Portal Thumbnail" class="card-image" />
+				<template x-for="data in contents">
+					<div class="card">
+						<img
+							x-bind:src="data.image.src"
+							x-bind:alt="data.image.alt"
+							x-bind:class="data.image.class"
+						/>
 
-					<!-- Project Details -->
-					<div class="card-content">
-						<p class="xl-title">ONE JPCS</p>
+						<div class="card-content">
+							<p class="xl-title" x-text="data.content.title"></p>
 
-						<!-- Descriptions -->
-						<p class="card-description">
-							A student organization portal presented as a thesis
-							project by
-							<span class="highlight-text">Bes Amiel Gonzales</span>,
-							<span class="highlight-text">Adonis Maniego</span>,
-							<span class="highlight-text">Andsmel Moreno</span>,
-							and
-							<span class="highlight-text">Leonard Sese</span>.
-						</p>
+							<p class="card-description" x-html="data.content.description"></p>
 
-						<p class="card-description">
-							It is designed to serve as a hub for the
-							<span class="highlight-text">JPCS SPCBA Chapter</span>. This platform provide features such as real-time
-							chatting, an online store with online payment, an
-							election feature, and many more.
-						</p>
-
-						<p class="card-description">
-							The project is currently undergoing updates.
-						</p>
-
-						<!-- Languages and Framework -->
-						<div class="card-badges">
-							<div class="green-outline-badge">HTML5</div>
-							<div class="green-outline-badge">CSS3</div>
-							<div class="green-outline-badge">JavaScript</div>
-							<div class="green-outline-badge">PHP</div>
-							<div class="yellow-outline-badge">Laravel 10</div>
-							<div class="yellow-outline-badge">Livewire 3</div>
-							<div class="yellow-outline-badge">Tailwind CSS</div>
-							<div class="yellow-outline-badge">Alpine.js</div>
-							<div class="gray-outline-badge">Bootstrap 5</div>
-							<div class="gray-outline-badge">jQuery</div>
-						</div>
+							<div class="card-badges">
+								<template x-for="(value, index) in data.content.badges">
+									<div 
+										x-bind:class="badgeColor(value)"
+										x-text="badgeText(index)"
+									></div>
+								</template>
+							</div>
+						</div>							
 					</div>
-				</div>
-
-				<!-- WebPal -->
-				<div class="card">
-					<!-- Project Image -->
-					<img src="/img/webpal.png" alt="WebPal Online Communications Platform Thumbnail" class="card-image" />
-
-					<!-- Project Details -->
-					<div class="card-content">
-						<p class="xl-title">WebPal</p>
-
-						<!-- Descriptions -->
-						<p class="card-description">
-							An anonymous online communication platform presented
-							as a thesis project by
-							<span class="highlight-text">Adonis Maniego</span>,
-							<span class="highlight-text">Andsmel Moreno</span>,
-							and
-							<span class="highlight-text">Leonard Sese</span>.
-						</p>
-
-						<p class="card-description">
-							It is designed for students to anonymously share
-							thoughts and feelings with their peers. It offers
-							real-time communication features like chatting,
-							video calls, and voice calls, as well as data
-							encryption for enhanced privacy.
-						</p>
-
-						<p class="card-description">
-							The project is also currently undergoing updates.
-						</p>
-
-						<!-- Languages and Framework -->
-						<div class="card-badges">
-							<div class="green-outline-badge">HTML5</div>
-							<div class="green-outline-badge">CSS3</div>
-							<div class="green-outline-badge">JavaScript</div>
-							<div class="green-outline-badge">PHP</div>
-							<div class="yellow-outline-badge">Laravel 10</div>
-							<div class="yellow-outline-badge">Livewire 3</div>
-							<div class="yellow-outline-badge">Tailwind CSS</div>
-							<div class="yellow-outline-badge">Alpine.js</div>
-							<div class="gray-outline-badge">Bootstrap 5</div>
-							<div class="gray-outline-badge">jQuery</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Portfolio -->
-				<div class="card">
-					<!-- Project Image -->
-					<img src="/img/portfolio.png" alt="Dan's Personal Portfolio Thumbnail" class="card-image" />
-
-					<!-- Project Details -->
-					<div class="card-content">
-						<p class="xl-title">Portfolio</p>
-
-						<!-- Descriptions -->
-						<p class="card-description">
-							This personal portfolio highlights my web
-							development skills and experience.
-						</p>
-
-						<p class="card-description">
-							Inspired by
-							<a href="https://www.justinchi.me/#contact" class="highlight-link">Justin Chi's portfolio</a>, I developed a more
-							simplified design.
-						</p>
-
-						<p class="card-description">
-							The content and functionality are entirely my own
-							work.
-						</p>
-
-						<!-- Languages and Framework -->
-						<div class="card-badges">
-							<div class="green-outline-badge">HTML5</div>
-							<div class="green-outline-badge">CSS3</div>
-							<div class="green-outline-badge">JavaScript</div>
-							<div class="green-outline-badge">Tailwind CSS</div>
-							<div class="green-outline-badge">Alpine.js</div>
-						</div>
-					</div>
-				</div>
+				</template>
 			</section>
 
 			<!-- Demos -->
