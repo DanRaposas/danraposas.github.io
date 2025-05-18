@@ -1,5 +1,6 @@
 // Imports
 import { projects } from './data/projects'
+import { demos } from './data/demos'
 
 // Functions
 // Function for toggling the navbars
@@ -35,8 +36,9 @@ window.addEventListener('alpine:init', () => {
         'toggle': false,
     }));
 
-    Alpine.data('projectCards', () => ({
-        contents: projects,
+    Alpine.data('cards', () => ({
+        projectData: projects,
+        demoData: demos,
         badgeColor(badgeValue) {
             return (badgeValue === true) ? "green-outline-badge" : "gray-outline-badge";
         },

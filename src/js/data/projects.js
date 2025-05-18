@@ -2,8 +2,7 @@ export const projects = {
     one_jpcs: {
         image: {
             src: "/img/one_jpcs.png",
-            alt: "ONE JPCS Student Portal Thumbnail",
-            class: "card-image"
+            alt: "ONE JPCS Student Portal Thumbnail"
         },
         content: {
             title: "ONE JPCS",
@@ -42,8 +41,7 @@ export const projects = {
     webpal: {
         image: {
             src: "/img/webpal.png",
-            alt: "WebPal Online Communications Platform Thumbnail",
-            class: "card-image"
+            alt: "WebPal Online Communications Platform Thumbnail"
         },
         content: {
             title: "WebPal",
@@ -82,8 +80,7 @@ export const projects = {
     portfolio: {
         image: {
             src: "/img/portfolio.png",
-            alt: "Dan's Personal Portfolio Thumbnail",
-            class: "card-image"
+            alt: "Dan's Personal Portfolio Thumbnail"
         },
         content: {
             title: "Portfolio",
