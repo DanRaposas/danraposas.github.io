@@ -2,6 +2,7 @@
 import { projects } from './data/projects'
 import { demos } from './data/demos'
 import { profile } from './data/profile'
+import { footer } from './data/footer'
 
 // Functions
 // Function for toggling the navbars
@@ -72,5 +73,9 @@ window.addEventListener('alpine:init', () => {
             const listLimit = list.length - 1;
             return (listLimit === currentIndex) ? `'${value}'` : `'${value}', `;
         }
+    }));
+
+    Alpine.data('footerData', () => ({
+        data: footer
     }));
 });
