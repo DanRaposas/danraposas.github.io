@@ -113,6 +113,7 @@ export const profile = {
                 list: [
                     "PHP",
                     "JavaScript",
+                    "TypeScript",
                     "HTML5",
                     "CSS3",
                 ]
@@ -124,6 +125,7 @@ export const profile = {
                     "Livewire",
                     "Magento 2",
                     "Alpine.js",
+                    "React",
                     "jQuery",
                     "Knockout.js",
                     "LESS",
