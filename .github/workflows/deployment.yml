@@ -29,12 +29,13 @@ jobs:
       # Node setup
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
+          cache: 'npm'
 
       # NPM clean install
       - run: npm ci
 
-      # NPM build for ddeployment
+      # NPM build for deployment
       - run: npm run build
 
       # Repo prep for GH pages deployment
@@ -45,6 +46,6 @@ jobs:
         with:
           path: './dist'
 
-      # GH Pages deploymeny]t
+      # GH Pages deploymenyt
       - id: deployment
         uses: actions/deploy-pages@v4
