@@ -1,10 +1,87 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
+@theme {
+  --color-gray-nurse-50: #f7f7f6;
+  --color-gray-nurse-100: #eceeea;
+  --color-gray-nurse-200: #dce0d9;
+  --color-gray-nurse-300: #b9c1b4;
+  --color-gray-nurse-400: #939e8a;
+  --color-gray-nurse-500: #717e69;
+  --color-gray-nurse-600: #5b6653;
+  --color-gray-nurse-700: #495144;
+  --color-gray-nurse-800: #3d4338;
+  --color-gray-nurse-900: #32382f;
+  --color-gray-nurse-950: #191c17;
+
+  --color-toledo-50: #fcf3f9;
+  --color-toledo-100: #fbe8f6;
+  --color-toledo-200: #f8d2ee;
+  --color-toledo-300: #f3aedf;
+  --color-toledo-400: #eb7bc8;
+  --color-toledo-500: #e054b0;
+  --color-toledo-600: #ce3491;
+  --color-toledo-700: #b22476;
+  --color-toledo-800: #932162;
+  --color-toledo-900: #7b2053;
+  --color-toledo-950: #31081f;
+
+  --color-persian-plum-50: #fff1f3;
+  --color-persian-plum-100: #ffdfe3;
+  --color-persian-plum-200: #ffc5cc;
+  --color-persian-plum-300: #ff9ca8;
+  --color-persian-plum-400: #ff6376;
+  --color-persian-plum-500: #ff334b;
+  --color-persian-plum-600: #ee142e;
+  --color-persian-plum-700: #c90c23;
+  --color-persian-plum-800: #a60e20;
+  --color-persian-plum-900: #6b0f1a;
+  --color-persian-plum-950: #4b040c;
+
+  --color-chicago-50: #f6f6f6;
+  --color-chicago-100: #e7e7e7;
+  --color-chicago-200: #d1d1d1;
+  --color-chicago-300: #b0b0b0;
+  --color-chicago-400: #888888;
+  --color-chicago-500: #6d6d6d;
+  --color-chicago-600: #595959;
+  --color-chicago-700: #4f4f4f;
+  --color-chicago-800: #454545;
+  --color-chicago-900: #3d3d3d;
+  --color-chicago-950: #262626;
+
+  --color-blue-smoke-50: #f6f7f6;
+  --color-blue-smoke-100: #e1e6e2;
+  --color-blue-smoke-200: #c3ccc5;
+  --color-blue-smoke-300: #9daba1;
+  --color-blue-smoke-400: #808f85;
+  --color-blue-smoke-500: #5e6e63;
+  --color-blue-smoke-600: #4a574f;
+  --color-blue-smoke-700: #3e4742;
+  --color-blue-smoke-800: #343b37;
+  --color-blue-smoke-900: #2e3330;
+  --color-blue-smoke-950: #171c18;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
 @layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentcolor);
+	}
+
 	* {
 		font-family: "Poppins", "Courier New", Courier, monospace;
 	}
@@ -14,140 +91,137 @@
 	}
 }
 
-@layer components {
-	.nav {
-		@apply y-centered-flex-col lg:x-end-flex-row w-full gap-5;
-	}
-
-	.nav-link {
-		@apply text-xl font-semibold text-chicago-700 transition-all hover:text-toledo-600 active:text-toledo-800;
-	}
-
-	.terminal-btn {
-		@apply size-5 rounded-md stroke-chicago-100 stroke-2 transition-all hover:bg-chicago-600 active:bg-chicago-800;
-	}
-
-	.three-xl-title {
-		@apply rounded border-y-4 border-solid border-chicago-700 py-2 text-3xl font-bold text-chicago-700;
-	}
-
-	.xl-title {
-		@apply text-xl font-bold text-chicago-700;
-	}
-
-	.terminal-text {
-		@apply font-mono text-chicago-100 select-none;
-	}
-
-	.terminal-keyword {
-		@apply font-mono text-toledo-400 select-none break-all;
-	}
-
-	.terminal-highlight {
-		@apply font-mono font-bold text-toledo-400 select-none transition-all hover:text-toledo-500 hover:underline hover:underline-offset-2 active:text-toledo-600;
-	}
-
-	.terminal-output {
-		@apply font-mono text-chicago-300 select-none;
-	}
-
-	.highlight-text {
-		@apply font-semibold text-toledo-600;
-	}
-
-	.highlight-link {
-		@apply font-semibold text-toledo-600 transition-all hover:text-toledo-700 hover:underline hover:underline-offset-2 active:text-toledo-800;
-	}
-
-	.main-content-section {
-		@apply y-centered-flex-col w-full gap-10;
-	}
-
-	.card {
-		@apply grid w-full grid-rows-2 gap-5 rounded-lg bg-gray-nurse-50 shadow-md shadow-blue-smoke-500 transition-all hover:shadow-lg hover:shadow-blue-smoke-700 md:grid-cols-3 md:grid-rows-none;
-	}
-
-	.card-content {
-		@apply y-start-flex-col gap-5 px-5 pb-5 md:col-span-2 md:py-5 md:pl-0 md:pr-5;
-	}
-
-	.card-image {
-		@apply size-full rounded-t-lg border-b-2 border-solid border-chicago-700 object-cover md:rounded-l-lg md:rounded-r-none md:border-b-0 md:border-r-2;
-	}
-
-	.card-description {
-		@apply text-pretty text-chicago-700;
-	}
-
-	.card-badges {
-		@apply flex w-full flex-row flex-wrap items-center justify-start gap-2;
-	}
-
-	.card-buttons {
-		@apply flex w-full flex-row flex-wrap items-center justify-start gap-2;
-	}
-
-	.badge {
-		@apply select-none rounded-lg border-2 border-solid px-2 py-1 font-mono transition-all hover:shadow;
-	}
-
-	.button {
-		@apply flex flex-row items-center justify-center gap-1 rounded-lg px-2 py-1 font-bold transition-all;
-	}
-
-	.green-outline-badge {
-		@apply badge border-green-400 text-chicago-700 hover:shadow-green-400;
-	}
-
-	.gray-outline-badge {
-		@apply badge border-chicago-400 text-chicago-400 hover:shadow-chicago-400;
-	}
-
-	.yellow-outline-badge {
-		@apply badge border-yellow-400 text-chicago-700 hover:shadow-yellow-400;
-	}
-
-	.link-button {
-		@apply button bg-toledo-600 text-chicago-100 hover:bg-toledo-700 active:bg-toledo-800;
-	}
-
-	.contact-link {
-		@apply x-centered-flex-row gap-2 text-lg text-chicago-700;
-	}
-
-	.contact-link-text {
-		@apply font-medium transition-all group-hover:text-toledo-600 group-active:text-toledo-800;
-	}
-
-	.contact-link-logo {
-		@apply size-7 fill-chicago-700 transition-all group-hover:fill-toledo-600 group-active:fill-toledo-800;
-	}
-
-	.credit-text {
-		@apply text-sm font-medium text-chicago-700;
-	}
+@utility nav {
+  @apply y-centered-flex-col lg:x-end-flex-row w-full gap-5;
 }
 
-@layer utilities {
-	.x-centered-flex-row {
-		@apply flex flex-row flex-wrap items-center justify-center;
-	}
+@utility nav-link {
+  @apply text-xl font-semibold text-chicago-700 transition-all hover:text-toledo-600 active:text-toledo-800;
+}
 
-	.x-end-flex-row {
-		@apply flex flex-row items-center justify-end;
-	}
+@utility terminal-btn {
+  @apply size-5 rounded-md stroke-chicago-100 stroke-2 transition-all hover:bg-chicago-600 active:bg-chicago-800;
+}
 
-	.y-centered-flex-col {
-		@apply flex flex-col items-center justify-center;
-	}
+@utility three-xl-title {
+  @apply rounded-sm border-y-4 border-solid border-chicago-700 py-2 text-3xl font-bold text-chicago-700;
+}
 
-	.y-start-flex-col {
-		@apply flex flex-col items-start justify-center;
-	}
+@utility xl-title {
+  @apply text-xl font-bold text-chicago-700;
+}
+
+@utility terminal-text {
+  @apply font-mono text-chicago-100 select-none;
+}
+
+@utility terminal-keyword {
+  @apply font-mono text-toledo-400 select-none break-all;
+}
+
+@utility terminal-highlight {
+  @apply font-mono font-bold text-toledo-400 select-none transition-all hover:text-toledo-500 hover:underline hover:underline-offset-2 active:text-toledo-600;
+}
+
+@utility terminal-output {
+  @apply font-mono text-chicago-300 select-none;
+}
+
+@utility highlight-text {
+  @apply font-semibold text-toledo-600;
+}
+
+@utility highlight-link {
+  @apply font-semibold text-toledo-600 transition-all hover:text-toledo-700 hover:underline hover:underline-offset-2 active:text-toledo-800;
+}
+
+@utility main-content-section {
+  @apply y-centered-flex-col w-full gap-10;
+}
+
+@utility card {
+  @apply grid w-full grid-rows-2 gap-5 rounded-lg bg-gray-nurse-50 shadow-md shadow-blue-smoke-500 transition-all hover:shadow-lg hover:shadow-blue-smoke-700 md:grid-cols-3 md:grid-rows-none;
+}
+
+@utility card-content {
+  @apply y-start-flex-col gap-5 px-5 pb-5 md:col-span-2 md:py-5 md:pl-0 md:pr-5;
+}
+
+@utility card-image {
+  @apply size-full rounded-t-lg border-b-2 border-solid border-chicago-700 object-cover md:rounded-l-lg md:rounded-r-none md:border-b-0 md:border-r-2;
+}
+
+@utility card-description {
+  @apply text-pretty text-chicago-700;
+}
+
+@utility card-badges {
+  @apply flex w-full flex-row flex-wrap items-center justify-start gap-2;
+}
+
+@utility card-buttons {
+  @apply flex w-full flex-row flex-wrap items-center justify-start gap-2;
+}
+
+@utility badge {
+  @apply select-none rounded-lg border-2 border-solid px-2 py-1 font-mono transition-all hover:shadow-sm;
+}
+
+@utility button {
+  @apply flex flex-row items-center justify-center gap-1 rounded-lg px-2 py-1 font-bold transition-all;
+}
+
+@utility green-outline-badge {
+  @apply badge border-green-400 text-chicago-700 hover:shadow-green-400;
+}
+
+@utility gray-outline-badge {
+  @apply badge border-chicago-400 text-chicago-400 hover:shadow-chicago-400;
+}
+
+@utility yellow-outline-badge {
+  @apply badge border-yellow-400 text-chicago-700 hover:shadow-yellow-400;
+}
+
+@utility link-button {
+  @apply button bg-toledo-600 text-chicago-100 hover:bg-toledo-700 active:bg-toledo-800;
+}
+
+@utility contact-link {
+  @apply x-centered-flex-row gap-2 text-lg text-chicago-700;
+}
+
+@utility contact-link-text {
+  @apply font-medium transition-all group-hover:text-toledo-600 group-active:text-toledo-800;
+}
+
+@utility contact-link-logo {
+  @apply size-7 fill-chicago-700 transition-all group-hover:fill-toledo-600 group-active:fill-toledo-800;
+}
+
+@utility credit-text {
+  @apply text-sm font-medium text-chicago-700;
+}
+
+@utility x-centered-flex-row {
+  @apply flex flex-row flex-wrap items-center justify-center;
+}
+
+@utility x-end-flex-row {
+  @apply flex flex-row items-center justify-end;
+}
+
+@utility y-centered-flex-col {
+  @apply flex flex-col items-center justify-center;
+}
+
+@utility y-start-flex-col {
+  @apply flex flex-col items-start justify-center;
 }
 
 #name {
 	@apply w-full self-start overflow-x-clip text-nowrap font-mono text-4xl text-chicago-700 transition-all md:text-6xl lg:text-7xl xl:text-8xl;
+  
 	animation:
 		typing 2s steps(14),
 		cursor-black 0.5s step-end 4 alternate;
@@ -155,6 +229,7 @@
 
 #position {
 	@apply w-full self-start overflow-x-clip text-nowrap font-mono text-2xl text-chicago-700 transition-all md:text-4xl lg:text-5xl xl:text-6xl;
+
 	animation:
 		hide-text 2s 1,
 		typing 2s steps(13) 2s,
@@ -168,26 +243,26 @@
 
 @keyframes cursor-black {
 	0%, 100% {
-		@apply border-r-8 border-solid border-chicago-700;
+		border-right: 8px solid var(--color-chicago-700);
 	}
 }
 
 @keyframes cursor-black-blinking {
 	50% {
-		@apply border-r-8 border-solid border-chicago-700;
+		border-right: 8px solid var(--color-chicago-700);
 	}
 }
 
 @keyframes cursor-white-blinking {
 	50% {
-		@apply border-r-8 border-solid border-chicago-100;
+    border-right: 8px solid var(--color-chicago-100);
 	}
 }
 
 @keyframes hide-text {
 	0%,
 	100% {
-		@apply text-transparent;
+    color: transparent;
 	}
 }
 
