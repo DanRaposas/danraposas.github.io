@@ -9,6 +9,7 @@ window.addEventListener('alpine:init', () => {
     Alpine.data('navData', () => ({
         data: nav,
         'toggle': false,
+
         init() {
             window.addEventListener('DOMContentLoaded', () => {
                 this.toggleNav();
@@ -18,6 +19,7 @@ window.addEventListener('alpine:init', () => {
                 this.toggleNav();
             });
         },
+
         toggleNav() {
             let viewport = window.outerWidth;
             let isMobile = viewport < 1024;
@@ -29,9 +31,11 @@ window.addEventListener('alpine:init', () => {
         projectData: projects,
         demoData: demos,
         profileData: profile,
+
         badgeColor(badgeValue) {
             return (badgeValue === true) ? "green-outline-badge" : "gray-outline-badge";
         },
+
         badgeText(badgeName) {
             const name = badgeName.toLowerCase();
             
@@ -56,6 +60,7 @@ window.addEventListener('alpine:init', () => {
                 return name.charAt(0).toUpperCase() + name.slice(1);
             }
         },
+        
         terminalList(list, currentIndex, value) {
             const listLimit = list.length - 1;
             return (listLimit === currentIndex) ? `'${value}'` : `'${value}', `;

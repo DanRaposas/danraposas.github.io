@@ -96,7 +96,6 @@ export const profile = {
                     "Magna Cum Laude"
                 ]
             },
-            // certifications: {},
             experience: {  
                 title: `> dan.<span class="terminal-keyword">experience</span>`,
                 list: [
@@ -106,6 +105,16 @@ export const profile = {
                             class="terminal-highlight"
                         >DevTeam</a>`,
                     "Junior Magento Developer"
+                ]
+            },
+            certifications: {
+                title: `> dan.<span class="terminal-keyword">certifications</span>`,
+                list: [
+                    `<a
+                        href="https://www.credly.com/badges/99a0e9a5-8b5b-47f2-ad13-335d257c9d73/public_url"
+                        target="_blank"
+                        class="terminal-highlight"
+                    >Hyva Certified Associate Developer</a>`
                 ]
             },
             programmingLanguages: {  
